@@ -1,0 +1,15 @@
+name: LinBot
+description: Essential Linplugin
+version: 1.0
+
+author: jacklin213
+main: me.jacklin213.linbot.LinBot
+
+commands:
+  linbot:
+    description: Main command
+
+permissions:
+  linbot.access:
+    description: Gives full access to LinBot
+    default: false

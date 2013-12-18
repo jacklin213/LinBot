@@ -1,0 +1,10 @@
+# ================= [LinBot] ================== #
+
+# Copyright 2013 Licence LinCraft(?)
+# http://dev.bukkit.org/licenses/2049-lin-craft-license/
+
+# Bellow are some examples of the messages accessable by !h
+# NOTE: these are CaSe SenSitIve
+dob: '&cWed &6Dec 18 &c09:52:10 &aNZDT 2013'
+gender: '&6I can be an &cit &6or a &che'
+help: '&6Feel free to ask me any questions, I will answer what i can'
