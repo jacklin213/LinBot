@@ -12,8 +12,10 @@ public class LinBotCommandManager {
 	private CommandDay cmdDay;
 	private CommandInitiate cmdIntiate;
 	private CommandH cmdH;
+	private CommandRandom cmdRandom;
 	private CommandReload cmdReload;
 	private CommandSay cmdSay;
+	private CommandShutdown cmdShutdown;
 	private CommandStatus cmdStatus;
 	private CommandSun cmdSun;
 	private CommandWhoAmI cmdWhoAmI;
@@ -38,8 +40,10 @@ public class LinBotCommandManager {
 		cmdDate = new CommandDate(plugin);	
 		cmdIntiate = new CommandInitiate(plugin);
 		cmdH = new CommandH(plugin);
+		cmdRandom = new CommandRandom(plugin);
 		cmdReload = new CommandReload(plugin);	
 		cmdSay = new CommandSay(plugin);
+		cmdShutdown = new CommandShutdown(plugin);
 		cmdStatus = new CommandStatus(plugin);
 		cmdSun = new CommandSun(plugin);
 		cmdWhoAmI = new CommandWhoAmI(plugin);
@@ -49,8 +53,10 @@ public class LinBotCommandManager {
 		cmdDate.setName("date");
 		cmdIntiate.setName("initiate");
 		cmdH.setName("h");
+		cmdRandom.setName("random");
 		cmdReload.setName("reload");
 		cmdSay.setName("say");
+		cmdShutdown.setName("shutdown");
 		cmdStatus.setName("status");
 		cmdSun.setName("sun");
 		cmdWhoAmI.setName("whoami");
@@ -60,8 +66,10 @@ public class LinBotCommandManager {
 		commandList.put("date", cmdDate);
 		commandList.put("initiate", cmdIntiate);
 		commandList.put("h", cmdH);
+		commandList.put("random", cmdRandom);
 		commandList.put("reload", cmdReload);
 		commandList.put("say", cmdSay);
+		commandList.put("shutdown", cmdShutdown);
 		commandList.put("status", cmdStatus);
 		commandList.put("sun", cmdSun);
 		commandList.put("whoami", cmdWhoAmI);

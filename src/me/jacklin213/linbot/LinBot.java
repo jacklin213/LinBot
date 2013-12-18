@@ -13,10 +13,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class LinBot extends JavaPlugin {
 
 	public LinBot plugin;
+	
 	public Logger log;
 	public LinBotListener LBL = new LinBotListener(this);
 	public LinBotCommandManager commandHandler = new LinBotCommandManager(this);
 	public MSG MSG = new MSG(this);
+	
+	private boolean online = false;
 	
 	@Override
 	public void onEnable() {
@@ -27,6 +30,7 @@ public class LinBot extends JavaPlugin {
 	
 	@Override
 	public void onDisable() {
+		this.setOnline(false);
 		log.info(String.format("Disabled Version %s", getDescription().getVersion()));
 	}
 	
@@ -40,6 +44,18 @@ public class LinBot extends JavaPlugin {
 			sender.sendMessage(ChatColor.GOLD + "Author: " + ChatColor.GREEN + "jacklin213");
 		}
 		return false;
+	}
+	
+	public void setOnline(boolean toggle){
+		if (toggle){
+			this.online = true;
+		} else {
+			this.online = false;
+		}
+	}
+	
+	public Boolean getOnline(){
+		return this.online;
 	}
 	
 	private void setLogger() {

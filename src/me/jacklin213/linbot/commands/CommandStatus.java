@@ -18,7 +18,7 @@ public class CommandStatus extends LinBotCommand {
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
 		if (cmdName.equalsIgnoreCase(commandName)){
-			boolean online = plugin.getServer().getPluginManager().isPluginEnabled(plugin);
+			boolean online = plugin.getOnline();
 			if (online){
 				plugin.MSG.broadcastMessage("&6Status: &aOnline");
 			} else {

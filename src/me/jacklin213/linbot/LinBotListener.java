@@ -30,6 +30,19 @@ public class LinBotListener implements Listener{
 					event.setCancelled(true);
 					plugin.MSG.commandReply(player, msg);
 				}
+				if (plugin.getOnline() == false){
+					if (this.offlineCmd(cmdName)){
+						Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
+							@Override
+							public void run() {
+								cmd.runCmd(player, cmdName, args);
+							}
+						}, 10);
+						return;
+					}
+					event.setMessage(msg);
+					return;
+				}
 				if (cmd != null){
 					Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
 						@Override
@@ -58,6 +71,13 @@ public class LinBotListener implements Listener{
 	
 	private Boolean execptionCheck(String cmd){
 		if (cmd.equalsIgnoreCase("say") || cmd.equalsIgnoreCase("initiate")){
+			return true;
+		}
+		return false;
+	}
+	
+	private Boolean offlineCmd(String cmd){
+		if (cmd.equalsIgnoreCase("initiate") || cmd.equalsIgnoreCase("status")){
 			return true;
 		}
 		return false;
