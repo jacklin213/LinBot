@@ -14,6 +14,7 @@ public abstract class LinBotCommand {
 	abstract void runCmd(CommandSender sender, String cmdName, String args[]);
 	
 	public void executeCmd(CommandSender sender, String cmdName, String args[]) {
+		plugin = LinBot.instance;
 		if (sender.hasPermission("linbot.command." + commandName)) {
 			runCmd(sender, cmdName, args);
 		}

@@ -12,7 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class LinBot extends JavaPlugin {
 
-	public LinBot plugin;
+	public static LinBot instance;
 	
 	public Logger log;
 	public LinBotListener LBL = new LinBotListener(this);
@@ -23,6 +23,7 @@ public class LinBot extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		instance = this;
 		this.setLogger();
 		this.createConfig();
 		getServer().getPluginManager().registerEvents(LBL, this);
