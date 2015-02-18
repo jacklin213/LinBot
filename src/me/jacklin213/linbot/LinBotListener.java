@@ -35,7 +35,7 @@ public class LinBotListener implements Listener {
 						Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 							@Override
 							public void run() {
-								cmd.runCmd(player, cmdName, args);
+								cmd.executeCmd(player, cmdName, args);
 							}
 						}, 10);
 						return;
@@ -47,7 +47,7 @@ public class LinBotListener implements Listener {
 					Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 						@Override
 						public void run() {
-							cmd.runCmd(player, cmdName, args);
+							cmd.executeCmd(player, cmdName, args);
 						}
 					}, 10);
 				}
