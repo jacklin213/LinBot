@@ -36,6 +36,10 @@ public class LinBotCommandManager {
 		return null;
 	}
 	
+	public HashMap<String, LinBotCommand> getCommandList() {
+		return commandList;
+	}
+	
 	private void registerCmds() {
 		cmdDay = new CommandDay(plugin);
 		cmdDate = new CommandDate(plugin);	
@@ -69,6 +73,7 @@ public class LinBotCommandManager {
 		commandList.put("date", cmdDate);
 		commandList.put("initiate", cmdIntiate);
 		commandList.put("h", cmdH);
+		commandList.put("rain", cmdRain);
 		commandList.put("random", cmdRandom);
 		commandList.put("reload", cmdReload);
 		commandList.put("say", cmdSay);
