@@ -10,8 +10,13 @@ public class LinBotCommandManager {
 	
 	private CommandDate cmdDate;
 	private CommandDay cmdDay;
-	private CommandInitiate cmdIntiate;
+	private CommandFly cmdFly;
+	private CommandGod cmdGod;
 	private CommandH cmdH;
+	private CommandHeal cmdHeal;
+	private CommandInitiate cmdIntiate;
+	private CommandKill cmdKill;
+	private CommandNight cmdNight;
 	private CommandRain cmdRain;
 	private CommandRandom cmdRandom;
 	private CommandReload cmdReload;
@@ -42,9 +47,14 @@ public class LinBotCommandManager {
 	
 	private void registerCmds() {
 		cmdDay = new CommandDay(plugin);
-		cmdDate = new CommandDate(plugin);	
-		cmdIntiate = new CommandInitiate(plugin);
+		cmdDate = new CommandDate(plugin);
+		cmdFly = new CommandFly();
+		cmdGod = new CommandGod();
 		cmdH = new CommandH(plugin);
+		cmdHeal = new CommandHeal();
+		cmdIntiate = new CommandInitiate(plugin);
+		cmdKill = new CommandKill();
+		cmdNight = new CommandNight();
 		cmdRain = new CommandRain();
 		cmdRandom = new CommandRandom(plugin);
 		cmdReload = new CommandReload(plugin);	
@@ -57,8 +67,13 @@ public class LinBotCommandManager {
 		
 		cmdDay.setName("day");
 		cmdDate.setName("date");
-		cmdIntiate.setName("initiate");
+		cmdFly.setName("fly");
+		cmdGod.setName("god");
 		cmdH.setName("h");
+		cmdHeal.setName("heal");
+		cmdIntiate.setName("initiate");
+		cmdKill.setName("kill");
+		cmdNight.setName("night");
 		cmdRain.setName("rain");
 		cmdRandom.setName("random");
 		cmdReload.setName("reload");
@@ -71,8 +86,13 @@ public class LinBotCommandManager {
 		
 		commandList.put("day", cmdDay);
 		commandList.put("date", cmdDate);
-		commandList.put("initiate", cmdIntiate);
+		commandList.put("fly", cmdFly);
+//		commandList.put("god", cmdGod);
 		commandList.put("h", cmdH);
+		commandList.put("heal", cmdHeal);
+		commandList.put("initiate", cmdIntiate);
+		commandList.put("kill", cmdKill);
+		commandList.put("night", cmdNight);
 		commandList.put("rain", cmdRain);
 		commandList.put("random", cmdRandom);
 		commandList.put("reload", cmdReload);
