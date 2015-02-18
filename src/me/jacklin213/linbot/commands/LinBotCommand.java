@@ -12,4 +12,10 @@ public abstract class LinBotCommand {
 	abstract void setName(String commandName);
 	
 	public abstract void runCmd(CommandSender sender, String cmdName, String args[]);
+	
+	public void executeCmd(CommandSender sender, String cmdName, String args[], String perm) {
+		if (sender.hasPermission("linbot.command." + commandName)) {
+			runCmd(sender, cmdName, args);
+		}
+	}
 }

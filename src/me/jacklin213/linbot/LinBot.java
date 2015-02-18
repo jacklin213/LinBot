@@ -36,7 +36,7 @@ public class LinBot extends JavaPlugin {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd,	String commandLabel, String[] args) {
-		if (commandLabel.equalsIgnoreCase("linbot") && sender.hasPermission("linbot.access")){
+		if (commandLabel.equalsIgnoreCase("linbot") && sender.hasPermission("linbot.access")) {
 			sender.sendMessage(ChatColor.GOLD + "+=========+" + ChatColor.WHITE + "[ " + ChatColor.GREEN + "LinBot" + ChatColor.WHITE + " ]" + ChatColor.GOLD + "+=========+");
 			sender.sendMessage(ChatColor.GOLD + "Name: " + ChatColor.AQUA + "LinBot");
 			sender.sendMessage(ChatColor.GOLD + "Version: " + ChatColor.AQUA + "v?");
@@ -46,15 +46,15 @@ public class LinBot extends JavaPlugin {
 		return false;
 	}
 	
-	public void setOnline(boolean toggle){
-		if (toggle){
+	public void setOnline(boolean toggle) {
+		if (toggle) {
 			this.online = true;
 		} else {
 			this.online = false;
 		}
 	}
 	
-	public Boolean getOnline(){
+	public Boolean getOnline() {
 		return this.online;
 	}
 	
@@ -63,10 +63,10 @@ public class LinBot extends JavaPlugin {
 		log.info(String.format("Enabled Version %s by jacklin213", getDescription().getVersion()));
 	}
 	
-	private void createConfig(){
+	private void createConfig() {
 		File configFile = new File(getDataFolder() + File.separator + "config.yml");
 			
-		if (!configFile.exists()){
+		if (!configFile.exists()) {
 			saveDefaultConfig();
 			log.info("Cannot find config.yml, Generating now....");
 			log.info("Config generated !");

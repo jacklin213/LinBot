@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 public class CommandStatus extends LinBotCommand {
 
-	public CommandStatus(LinBot instance){
+	public CommandStatus(LinBot instance) {
 		plugin = instance;
 	}
 	
@@ -17,7 +17,7 @@ public class CommandStatus extends LinBotCommand {
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
+		if (cmdName.equalsIgnoreCase(commandName)) {
 			boolean online = plugin.getOnline();
 			if (online){
 				plugin.MSG.broadcastMessage("&6Status: &aOnline");

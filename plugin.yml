@@ -1,6 +1,6 @@
 name: LinBot
-description: Essential Linplugin
-version: 1.1
+description: A bot made by jacklin213
+version: 1.1.4
 
 author: jacklin213
 main: me.jacklin213.linbot.LinBot
@@ -11,5 +11,32 @@ commands:
 
 permissions:
   linbot.access:
-    description: Gives full access to LinBot
+    description: Gives initial access to LinBot
+    default: op
+  linbot.command.admin:
+    children:
+      linbot.command.date: true
+      linbot.command.day: true
+      linbot.command.h: true
+      linbot.command.initiate: true
+      linbot.command.random: true
+      linbot.command.reload: true
+      linbot.command.say: true
+      linbot.command.shutdown: true
+      linbot.command.status: true
+      linbot.command.sun: true
+      linbot.command.update: true
+      linbot.command.whoami: true
     default: false
+  linbot.command.mod:
+    children:
+      linbot.command.date: true
+      linbot.command.day: true
+      linbot.command.h: true
+      linbot.command.initiate: true
+      linbot.command.random: true
+      linbot.command.say: true
+      linbot.command.status: true
+      linbot.command.sun: true
+      linbot.command.whoami: true
+    default: op

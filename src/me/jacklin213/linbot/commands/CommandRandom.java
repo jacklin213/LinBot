@@ -19,12 +19,12 @@ public class CommandRandom extends LinBotCommand{
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
-			if (args.length == 0){
+		if (cmdName.equalsIgnoreCase(commandName)) {
+			if (args.length == 0) {
 				Random rand = new Random();
 				plugin.MSG.broadcastMessage("&6Random Number: &c" + rand.nextInt());
 			} 
-			if (args.length == 1){
+			if (args.length == 1) {
 				long num = Long.parseLong(args[0]);
 				Random rand = new Random(num);
 				plugin.MSG.broadcastMessage("&6Random Number Between: &c0-" + num + "&6: &c" + rand.nextInt());

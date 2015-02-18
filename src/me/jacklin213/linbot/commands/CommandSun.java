@@ -18,7 +18,7 @@ public class CommandSun extends LinBotCommand{
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
+		if (cmdName.equalsIgnoreCase(commandName)) {
 			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "toggledownfall");
 			plugin.MSG.broadcastMessage("&6Rain rain go away, come back another day ~~");
 		}

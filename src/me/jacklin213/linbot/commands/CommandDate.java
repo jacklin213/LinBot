@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 
 public class CommandDate extends LinBotCommand {
 	
-	public CommandDate(LinBot instance){
+	public CommandDate(LinBot instance) {
 		this.plugin = instance;
 	}
 	
@@ -19,8 +19,8 @@ public class CommandDate extends LinBotCommand {
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
-			if (args.length == 0){
+		if (cmdName.equalsIgnoreCase(commandName)) {
+			if (args.length == 0) {
 				Date date = new Date();
 				plugin.MSG.broadcastMessage(date.toString());
 			}

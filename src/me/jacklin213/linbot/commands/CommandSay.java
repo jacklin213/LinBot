@@ -17,9 +17,9 @@ public class CommandSay extends LinBotCommand{
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
+		if (cmdName.equalsIgnoreCase(commandName)) {
 			StringBuilder sb = new StringBuilder();
-			for (String s : args){
+			for (String s : args) {
 				if (sb.length() > 0) {
 			        sb.append(" ");
 			    }

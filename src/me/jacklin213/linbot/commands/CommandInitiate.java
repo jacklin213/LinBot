@@ -17,7 +17,7 @@ public class CommandInitiate extends LinBotCommand{
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String[] args) {
-		if (cmdName.equalsIgnoreCase(commandName)){
+		if (cmdName.equalsIgnoreCase(commandName)) {
 			plugin.MSG.broadcastMessage("&aInitiating......");
 			plugin.setOnline(true);
 		}

@@ -19,27 +19,28 @@ public class CommandReload extends LinBotCommand {
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String args[]) {
-		if (cmdName.equalsIgnoreCase(this.commandName)){
-			if (args.length == 0){
+		if (cmdName.equalsIgnoreCase(this.commandName)) {
+			if (args.length == 0) {
 				plugin.reloadConfig();
 				plugin.MSG.broadcastMessage("&aMy configuration has been reloaded");
 			}
-			if (args.length == 1){
-				if (args[0].equalsIgnoreCase("cancel")){
+			if (args.length == 1) {
+				if (args[0].equalsIgnoreCase("cancel")) {
 					plugin.getServer().getScheduler().cancelTasks(plugin);
 					plugin.MSG.commandReply(sender, "&6Reloading &cCancelled");
 				}
-				if (args[0].equalsIgnoreCase("server")){
+				if (args[0].equalsIgnoreCase("server")) {
 					plugin.MSG.broadcastMessage("&aServer Reloading..... Please stand still!");
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-all");
 					Bukkit.getServer().reload();
 					plugin.MSG.broadcastMessage("&aReload Complete :D");
+					plugin.setOnline(true);
 				}
 			}
-			if (args.length == 2 && args[0].equalsIgnoreCase("server")){
+			if (args.length == 2 && args[0].equalsIgnoreCase("server")) {
 				int time = Integer.parseInt(args[1]);
-				if (time <= 300 && time >= 30){
-					if (time >= 60){
+				if (time <= 300 && time >= 30) {
+					if (time >= 60) {
 						this.timedReload(time);
 						plugin.MSG.broadcastMessage("&6Server Reloading in &c" + time/60 + " &6minutes");
 						plugin.MSG.broadcastMessage("&6Please log off safetly before then !");
@@ -57,11 +58,11 @@ public class CommandReload extends LinBotCommand {
 		}
 	}
 	
-	private void timedReload(int seconds){
-		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
+	private void timedReload(int seconds) {
+		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 			public void run() {
 				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-all");
-				for (Player p : plugin.getServer().getOnlinePlayers()){
+				for (Player p : plugin.getServer().getOnlinePlayers()) {
 					p.kickPlayer("Server reloading...");
 					Bukkit.getServer().reload();
 				}

@@ -23,19 +23,19 @@ public class LinBotCommandManager {
 	
 	private HashMap<String, LinBotCommand> commandList = new HashMap<String, LinBotCommand>();
 	
-	public LinBotCommandManager(LinBot instance){
+	public LinBotCommandManager(LinBot instance) {
 		plugin = instance;
 		this.registerCmds();
 	}
 	
-	public LinBotCommand matchCommand(String cmdName){
-		if (commandList.containsKey(cmdName)){
+	public LinBotCommand matchCommand(String cmdName) {
+		if (commandList.containsKey(cmdName)) {
 			return (LinBotCommand)commandList.get(cmdName);
 		}
 		return null;
 	}
 	
-	private void registerCmds(){
+	private void registerCmds() {
 		cmdDay = new CommandDay(plugin);
 		cmdDate = new CommandDate(plugin);	
 		cmdIntiate = new CommandInitiate(plugin);

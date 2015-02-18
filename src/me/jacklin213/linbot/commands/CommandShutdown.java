@@ -6,7 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandShutdown extends LinBotCommand{
+public class CommandShutdown extends LinBotCommand {
 
 	public CommandShutdown(LinBot instance){
 		plugin = instance;
@@ -19,26 +19,26 @@ public class CommandShutdown extends LinBotCommand{
 
 	@Override
 	public void runCmd(CommandSender sender, String cmdName, String args[]) {
-		if (cmdName.equalsIgnoreCase(this.commandName)){
-			if (args.length == 0){
+		if (cmdName.equalsIgnoreCase(this.commandName)) {
+			if (args.length == 0) {
 				plugin.MSG.broadcastMessage("&cLogging out & Shutting down");
 				plugin.setOnline(false);
 			}
-			if (args.length == 1){
-				if (args[0].equalsIgnoreCase("cancel")){
+			if (args.length == 1) {
+				if (args[0].equalsIgnoreCase("cancel")) {
 					plugin.getServer().getScheduler().cancelTasks(plugin);
 					plugin.MSG.commandReply(sender, "&6Server Shutdown &cCancelled");
 				}
-				if (args[0].equalsIgnoreCase("server")){
-					plugin.MSG.broadcastMessage("&6Server Shutting down..... We will be back soon!");
+				if (args[0].equalsIgnoreCase("server")) {
+					plugin.MSG.broadcastMessage("&6Server Shutting down..... We will be back in 5!");
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-all");
 					Bukkit.getServer().shutdown();
 				}
 			}
-			if (args.length == 2 && args[0].equalsIgnoreCase("server")){
+			if (args.length == 2 && args[0].equalsIgnoreCase("server")) {
 				int time = Integer.parseInt(args[1]);
-				if (time <= 300 && time >= 10){
-					if (time >= 60){
+				if (time <= 300 && time >= 10) {
+					if (time >= 60) {
 						this.timedShutdown(time);
 						plugin.MSG.broadcastMessage("&6Server Shutting down in &c" + time/60 + " &6minutes");
 						plugin.MSG.broadcastMessage("&6Please log off safetly before then !");
@@ -50,19 +50,19 @@ public class CommandShutdown extends LinBotCommand{
 						plugin.MSG.broadcastDelayedMessage("&4Be warned You will be kicked then", 5);
 					}
 				} else {
-					plugin.MSG.commandReply(sender, "&cTime must be under &6500&cs and above &630&cs");
+					plugin.MSG.commandReply(sender, "&cTime must be under &6500&cs and above &610&cs");
 				}
 			}
 		}
 	}
 	
-	private void timedShutdown(int seconds){
-		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
+	private void timedShutdown(int seconds) {
+		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 			public void run() {
 				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-all");
-				for (Player p : plugin.getServer().getOnlinePlayers()){
-					p.kickPlayer("Server reloading...");
-					Bukkit.getServer().reload();
+				for (Player p : plugin.getServer().getOnlinePlayers()) {
+					p.kickPlayer("Server Closed");
+					Bukkit.getServer().shutdown();
 				}
 			}
 		}, seconds * 20);
