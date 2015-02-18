@@ -17,8 +17,14 @@ permissions:
     children:
       linbot.command.date: true
       linbot.command.day: true
+      linbot.command.fly: true
+      linbot.command.god: true
       linbot.command.h: true
+      linbot.command.heal: true
       linbot.command.initiate: true
+      linbot.command.kill: true
+      linbot.command.night: true
+      linbot.command.rain: true
       linbot.command.random: true
       linbot.command.reload: true
       linbot.command.say: true
@@ -32,8 +38,14 @@ permissions:
     children:
       linbot.command.date: true
       linbot.command.day: true
+      linbot.command.fly: true
+      linbot.command.god: true
       linbot.command.h: true
+      linbot.command.heal: true
       linbot.command.initiate: true
+      linbot.command.kill: true
+      linbot.command.night: true
+      linbot.command.rain: true
       linbot.command.random: true
       linbot.command.say: true
       linbot.command.status: true
