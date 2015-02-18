@@ -12,6 +12,7 @@ public class LinBotCommandManager {
 	private CommandDay cmdDay;
 	private CommandInitiate cmdIntiate;
 	private CommandH cmdH;
+	private CommandRain cmdRain;
 	private CommandRandom cmdRandom;
 	private CommandReload cmdReload;
 	private CommandSay cmdSay;
@@ -40,6 +41,7 @@ public class LinBotCommandManager {
 		cmdDate = new CommandDate(plugin);	
 		cmdIntiate = new CommandInitiate(plugin);
 		cmdH = new CommandH(plugin);
+		cmdRain = new CommandRain();
 		cmdRandom = new CommandRandom(plugin);
 		cmdReload = new CommandReload(plugin);	
 		cmdSay = new CommandSay(plugin);
@@ -53,6 +55,7 @@ public class LinBotCommandManager {
 		cmdDate.setName("date");
 		cmdIntiate.setName("initiate");
 		cmdH.setName("h");
+		cmdRain.setName("rain");
 		cmdRandom.setName("random");
 		cmdReload.setName("reload");
 		cmdSay.setName("say");
