@@ -18,7 +18,9 @@ public class CommandFly extends LinBotCommand {
 			Player player = (Player) sender;
 			if (player.isFlying()) {
 				player.setFlying(false);
+				player.setAllowFlight(false);
 			} else {
+				player.setAllowFlight(true);
 				player.setFlying(true);
 				player.setFlySpeed(0.1F);
 			}
