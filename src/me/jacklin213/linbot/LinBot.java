@@ -20,6 +20,7 @@ public class LinBot extends JavaPlugin {
 	public MSG MSG = new MSG(this);
 	
 	private boolean online = false;
+	private boolean sleep = false;
 	
 	@Override
 	public void onEnable() {
@@ -53,6 +54,14 @@ public class LinBot extends JavaPlugin {
 		} else {
 			this.online = false;
 		}
+	}
+	
+	public void setSleep(boolean sleep) {
+		this.sleep = sleep;
+	}
+	
+	public Boolean isSleep() {
+		return this.sleep;
 	}
 	
 	public Boolean getOnline() {

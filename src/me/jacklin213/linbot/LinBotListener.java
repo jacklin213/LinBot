@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 public class LinBotListener implements Listener {
 	
@@ -43,6 +44,7 @@ public class LinBotListener implements Listener {
 					event.setMessage(msg);
 					return;
 				}
+				if(plugin.isSleep()) plugin.commandHandler.matchCommand("sleep").executeCmd(Bukkit.getConsoleSender(), "sleep", null);
 				if (cmd != null) {
 					Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 						@Override

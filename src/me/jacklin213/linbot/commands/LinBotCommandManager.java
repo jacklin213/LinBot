@@ -21,6 +21,7 @@ public class LinBotCommandManager {
 	private CommandRandom cmdRandom;
 	private CommandReload cmdReload;
 	private CommandSay cmdSay;
+	private CommandSleep cmdSleep;
 	private CommandShutdown cmdShutdown;
 	private CommandStatus cmdStatus;
 	private CommandSun cmdSun;
@@ -59,6 +60,7 @@ public class LinBotCommandManager {
 		cmdRandom = new CommandRandom(plugin);
 		cmdReload = new CommandReload(plugin);	
 		cmdSay = new CommandSay(plugin);
+		cmdSleep = new CommandSleep();
 		cmdShutdown = new CommandShutdown(plugin);
 		cmdStatus = new CommandStatus(plugin);
 		cmdSun = new CommandSun(plugin);
@@ -78,6 +80,7 @@ public class LinBotCommandManager {
 		cmdRandom.setName("random");
 		cmdReload.setName("reload");
 		cmdSay.setName("say");
+		cmdSleep.setName("sleep");
 		cmdShutdown.setName("shutdown");
 		cmdStatus.setName("status");
 		cmdSun.setName("sun");
@@ -97,6 +100,7 @@ public class LinBotCommandManager {
 		commandList.put("random", cmdRandom);
 		commandList.put("reload", cmdReload);
 		commandList.put("say", cmdSay);
+		commandList.put("sleep", cmdSleep);
 		commandList.put("shutdown", cmdShutdown);
 		commandList.put("status", cmdStatus);
 		commandList.put("sun", cmdSun);

@@ -20,7 +20,7 @@ public class CommandStatus extends LinBotCommand {
 		if (cmdName.equalsIgnoreCase(commandName)) {
 			boolean online = plugin.getOnline();
 			if (online){
-				plugin.MSG.broadcastMessage("&6Status: &aOnline");
+				plugin.MSG.broadcastMessage("&6Status: &aOnline" + (plugin.isSleep() ? "&e(SleepMode)" : ""));
 				plugin.MSG.broadcastMessage("&eCommands loaded: &6" + plugin.commandHandler.getCommandList().size());
 			} else {
 				plugin.MSG.broadcastMessage("&6Status: &cOffline");
