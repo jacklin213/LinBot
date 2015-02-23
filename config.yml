@@ -3,6 +3,7 @@
 # Copyright 2013 Licence LinCraft(?)
 # http://dev.bukkit.org/licenses/2049-lin-craft-license/
 
+server-name: LinCraft
 # Bellow are some examples of the messages accessable by !h
 # NOTE: these are CaSe SenSitIve
 dob: '&cWed &6Dec 18 &c09:52:10 &aNZDT 2013'

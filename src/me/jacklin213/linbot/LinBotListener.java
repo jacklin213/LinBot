@@ -18,6 +18,11 @@ public class LinBotListener implements Listener {
 	}
 	
 	@EventHandler
+	public void onJoin(PlayerJoinEvent event) {
+		if (!event.getPlayer().hasPlayedBefore()) plugin.MSG.broadcastMessage("&eWelcome to &6"+ plugin.getConfig().getString("server-name") +" &a" + event.getPlayer().getName());
+	}
+	
+	@EventHandler
 	public void onChat(AsyncPlayerChatEvent event) {
 		final Player player = event.getPlayer();
 		if (player.getName().equalsIgnoreCase("jacklin213") || player.hasPermission("linbot.access")) {
