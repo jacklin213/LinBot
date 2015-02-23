@@ -13,8 +13,10 @@ public class MSG {
 		plugin = instance;
 	}
 	
-	public void broadcastMessage(String msg) {
-		plugin.getServer().broadcastMessage(format(displayName) + format(msg));
+	public void broadcastMessage(String... msg) {
+		for (String string : msg) {
+			plugin.getServer().broadcastMessage(format(displayName) + format(string));
+		}
 	}
 	
 	public void broadcastDelayedMessage(final String msg, int seconds) {
@@ -25,8 +27,10 @@ public class MSG {
 		}, seconds * 20);
 	}
 	
-	public void commandReply(CommandSender sender, String msg) {
-		sender.sendMessage(format(displayName) + format(msg));
+	public void commandReply(CommandSender sender, String... msg) {
+		for (String string : msg) {
+			sender.sendMessage(format(displayName) + format(string));
+		}
 	}
 	
 	public String format(String msg) {
