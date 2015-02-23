@@ -1,6 +1,6 @@
 name: LinBot
 description: A bot made by jacklin213
-version: 1.1.5
+version: 1.1.6
 
 author: jacklin213
 main: me.jacklin213.linbot.LinBot
@@ -28,6 +28,7 @@ permissions:
       linbot.command.random: true
       linbot.command.reload: true
       linbot.command.say: true
+      linbot.command.sleep: true
       linbot.command.shutdown: true
       linbot.command.status: true
       linbot.command.sun: true
@@ -48,6 +49,7 @@ permissions:
       linbot.command.rain: true
       linbot.command.random: true
       linbot.command.say: true
+      linbot.command.sleep: true
       linbot.command.status: true
       linbot.command.sun: true
       linbot.command.whoami: true
